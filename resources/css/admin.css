@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+/* 管理画面共通 */
+
+.adminContentsArea{
+    display: flex;
+}
+
+.adminHeader{
+    background-color: #fff;
+    width: 100%;
+    padding: 5px 20px;
+}
+
+.rightContents{
+    background-color: #f5f9fc;
+    width: calc(100% - 170px);
+}
+
+.adminAside{
+    height: 100vh;
+    width: 170px;
+}
+
+/* login */
+
+.adminTitle {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+}
+
+.loginFormArea {
+    box-shadow: 2px 2px 7px 1px rgb(0 0 0 / 8%), -2px -2px 7px 1px rgb(0 0 0 / 8%);
+    max-width:400px;
+    width:90%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.login{
+    position: relative;
+    height: 100vh;
+    padding: 20vh 0;
+}
+
+.loginInput {
+    border: solid 1px hwb(0 40% 60%);
+    box-shadow: 1px 3px 3px rgb(52, 50, 50);
+    width: 340px;
+    height: 30px;
+}
+
+.loginBtn {
+  color: #F9FAF7;
+  background-color: #88C8AC;
+  border-radius: 10px;
+  margin: 10px auto;
+  padding: 10px 150px;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,309 @@
+@charset "UTF-8";
+
+.main {
+    color:#333;
+}
+
+
+.contactMainBox {
+    max-width: 800px;
+    width: 100%;
+    /* margin: auto; */
+    margin-left: 180px;
+}
+
+.contactItem .required {
+    background: #88c8ac;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+
+.contactItem {
+    border-top: 1px solid #eaedf2;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.textItem {
+    padding: 20px 10px;
+    width: 40%;
+}
+
+.inputItem {
+    padding: 20px 10px;
+    width: 40%;
+}
+
+.textInput {
+    background-color: #eaedf2;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.textItem label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.submitButton {
+    width: 90%;
+    margin: auto;
+    max-width: 300px;
+    background-color: #88c8ac;
+    border: 2px #333 solid;
+    border-radius: 8px;
+    display: block;
+    padding: 20px 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.dateInput {
+    border: 1px #888b91 solid;
+}
+
+.select {
+    border: 1px #888b91 solid;
+}
+
+.contactText {
+    background-color: #ebedf2;
+    width: 100%;
+    height: 200px;
+}
+
+.errorMessage {
+    color: red;
+    display: block;
+    margin-top: 5px;
+}
+
+/* HOME */
+
+table th,td{
+    border:1px solid #333;
+    padding: 16px;
+    margin: 10px;
+    word-break: break-word; /* 長い文字列の折り返し */
+}
+
+.tableThead {
+    background-color: #EEEEEE;
+}
+
+.tableCreateLink {
+    color: #5FA560;
+    padding: 16px;
+    margin: 10px;
+    word-break: break-word; /* 長い文字列の折り返し */
+}
+
+
+/* ハンバーガー */
+
+.contentsArea{
+    display: flex;
+    min-height: 100vh;
+    padding-left: 0;  
+    margin-left: 0;  /* sidebar幅に合わせる */
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.sidebar {
+    flex-shrink: 0;
+    min-height: 100vh;
+    position: fixed;
+    width: 180px;
+    height: 100vh;
+    transition: width .2s ease;
+    color: #DDEDE6;
+    background-color: #88C8AC;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: auto;          /* bottom指定があったら無効化 */
+    z-index: 1000;
+}
+
+.sidebarList{
+    margin: 0;
+    padding: 80px 0 0 0;
+    list-style: none;
+}
+
+.main-part{
+    margin-left: 180px;
+    padding: 80px 20px 50px;
+    transition: margin-left .2s ease;
+}
+
+.sidebar ul{
+    margin: 0;
+    padding: 80px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    list-style: none;
+}
+
+.sidebar a.sidebar-icon{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar .sidebar_menu,
+.sidebar .sidebar_menu_inquiry{
+    margin: 0;
+}
+
+
+.sidebar.shrunk {
+  width: 70px;
+}
+
+.hamburger {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50px;
+    flex: 0 0 50px; 
+    text-align: right;
+    width: 100%;
+    -webkit-transition-property: width;
+    transition-property: width;
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    border: 0;
+    padding: 0;
+    background: 0 0;
+}
+
+.hamburger-menu {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 16px;
+    right: 8px;
+    border: 0;
+    background: transparent;
+    appearance: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+
+  .hamburger-menu-shrunk {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 0;
+    background: transparent;
+    appearance: none;
+    padding: 0;
+    cursor: pointer;
+    text-align:right;
+    left: 0;
+    color:#001306;
+  }
+
+
+  .hamburger-menu__bar {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    height: 3px;
+    border-radius: 10px;
+    background: #DDEDE6;
+    display: block;
+  }
+  .hamburger-menu__bar:first-child {
+    top: 16px;
+  }
+  .hamburger-menu__bar:nth-child(2) {
+    top: 24px;
+  }
+  .hamburger-menu__bar:last-child {
+    top: 32px;
+  }
+
+  .sidebarHamburger{
+      position: relative;
+      height: 70px;   /* ここでメニューの開始位置を確保 */
+  }
+
+  .btn-logout {
+	padding: 3px;
+    border-radius: 5px;
+	font-weight: bold;
+	border: 2px solid #4CAF93;
+	color: #4CAF93;
+	transition: 0.5s;
+    position: absolute;
+    top: 20px;
+    right: 105px;
+}
+
+.btn-logout:hover {
+	color: #fff;
+	background: #4CAF93;
+}
+
+
+.header {
+    font-size: 20px;
+    /* border: 1px solid #a9adac; */
+    background: #EEEEEE;
+}
+
+.header .top {
+    color: #4CAF93;
+    text-decoration: underline;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.side-button{
+      border-bottom: 2px solid #DDEDE6;
+      display: inline-block;
+}
+
+/* 縮小状態（JSで body に付くクラス） */
+body.sidebar-shrunk .sidebar{ width: 70px; }
+body.sidebar-shrunk .main-part{ margin-left: 70px; }
+
+/* 縮小時は「文字だけ」消す */
+body.sidebar-shrunk .sidebar_menu,
+body.sidebar-shrunk .sidebar_menu_inquiry{
+  display: none;
+}
+
+.accountInquiry{
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border: solid 1px #000000;
+}
+
+.inquiryEdit{
+    color: #4CAF93;
+}
