@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="header">
-    <h1><a href="http://127.0.0.1:8000/home" class="top">TOP</a> > 会員登録</h1>
+    <h1><a href="{{ url('/home') }}" class="top">TOP</a> > 会員登録</h1>
 </div>
     <body>
             <div class="main-part">

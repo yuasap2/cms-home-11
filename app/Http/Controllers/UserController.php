@@ -39,10 +39,10 @@ class UserController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'phone' => 'nullable|string|max:50',
+            'phone' => 'required|string|max:50',
             'zipcode' => 'required|string|max:20',
-            'prefecture' => 'nullable|string|max:50',
-            'city' => 'nullable|string|max:50',
+            'prefecture' => 'required|string|max:50',
+            'city' => 'required|string|max:50',
             'address' => 'nullable|string|max:255',
             'remarks' => 'nullable|string|max:1000',
         ]);

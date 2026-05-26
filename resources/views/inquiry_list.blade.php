@@ -1,15 +1,16 @@
-@extends('layouts.user_base')
+@extends('layouts.admin_base')
 
 @section('content')
 
-<h1>
-    <div class="header">
-        <a href="{{ url('/home') }}" class="top">TOP</a> > お問い合わせ一覧
-    </div>
-</h1>
+<div class="header">
+    <h1>
+     <a href="{{ url('/home') }}" class="top">TOP</a> > お問い合わせ一覧
+    </h1>
+    <div class="title">お問い合わせ一覧</div>
+</div>
 
 <div class="adminTableArea">
-    <h1>お問い合わせ一覧</h1>
+    
 
     @if(session('success'))
         <div class="alert alert-success">
@@ -17,9 +18,10 @@
         </div>
     @endif
 
-    <table border="1" cellpadding="10" cellspacing="0">
+    <table border="1" cellpadding="10" cellspacing="0" class='inquiryListTable'>
         <tr>
-            <th>ID</th>
+            <th></th>
+            <th>受付番号</th>
             <th>会社名</th>
             <th>名前</th>
             <th>メール</th>
@@ -27,11 +29,14 @@
             <th>お問い合わせ内容</th>
             <th>ステータス</th>
             <th>備考</th>
-            <th>操作</th>
+
         </tr>
 
         @foreach($contacts as $contact)
             <tr>
+                <td>
+                    <a href="{{ route('inquiry.edit', $contact->id) }}" class=inquiryEdit>編集</a>
+                </td>
                 <td>{{ $contact->id }}</td>
                 <td>{{ $contact->company }}</td>
                 <td>{{ $contact->name }}</td>
@@ -39,10 +44,7 @@
                 <td>{{ $contact->phone }}</td>
                 <td>{{ $contact->contact }}</td>
                 <td>{{ $contact->status }}</td>
-                <td>{{ $contact->remarks }}</td>
-                <td>
-                    <a href="{{ route('inquiry.edit', $contact->id) }}" class=inquiryEdit>編集</a>
-                </td>
+                <td>{{ $contact->remarks }}</td>     
             </tr>
         @endforeach
     </table>

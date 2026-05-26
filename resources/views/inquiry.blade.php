@@ -1,6 +1,7 @@
-@extends('layouts.user_base')
+@extends('layouts.admin_base')
 
 @section('content')
+
 <div class="header">
     <h1>
         <a href="{{ url('/home') }}" class="top">TOP</a>

@@ -203,6 +203,10 @@ return [
     'sex' => '性別',
     'job' => '職業',
     'contact' => 'お問い合わせ内容',
+    'prefecture' => '都道府県',
+    'city' => '市町村',
+    'address' => '番地・アパート名',
+    'remarks' => '備考欄',
 ],
 
 ];

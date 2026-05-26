@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+/* =========================
+   　共通
+========================= */
 .main {
     color:#333;
 }
@@ -8,7 +11,6 @@
 .contactMainBox {
     max-width: 800px;
     width: 100%;
-    /* margin: auto; */
     margin-left: 180px;
 }
 
@@ -50,7 +52,7 @@
     font-weight: bold;
 }
 
-.submitButton {
+.submitButton, .updateButton {
     width: 90%;
     margin: auto;
     max-width: 300px;
@@ -85,14 +87,41 @@
     margin-top: 5px;
 }
 
-/* HOME */
+/* =========================
+   HOME
+========================= */
+
+.home{
+    font-size: 30px;
+}
+
+.homeTableThead{
+    text-align: center
+}
+
+.homeTableTbody{
+    text-align: center
+}
+
+.homeTable th,.homeTable td{
+    border:0px;
+    padding: 8px;
+    margin: 10px;
+}
+
+/* =========================
+   表
+========================= */
 
 table th,td{
     border:1px solid #333;
     padding: 16px;
     margin: 10px;
-    word-break: break-word; /* 長い文字列の折り返し */
+    /* word-break: break-word; */
+     /* 長い文字列の折り返し */
 }
+
+
 
 .tableThead {
     background-color: #EEEEEE;
@@ -102,17 +131,53 @@ table th,td{
     color: #5FA560;
     padding: 16px;
     margin: 10px;
-    word-break: break-word; /* 長い文字列の折り返し */
+    /* word-break: break-word; */
+     /* 長い文字列の折り返し */
+}
+
+/* =========================
+   表　アカウント一覧
+========================= */
+
+.accountTable {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.accountTable table {
+    min-width: 1000px;
+    border-collapse: collapse;
+}
+
+.accountTable th,.accountTable td{
+    border:1px solid #333;
+    padding: 16px;
+    margin: 10px;
+    white-space: nowrap;
+}
+
+/* =========================
+   表　お問い合わせ
+========================= */
+
+.inquiryListTable th,
+.inquiryListTable td{
+    border:1px solid #333;
+    padding: 16px;
+    margin: 10px;
+    /* word-break: break-word; 長い文字列の折り返し */
 }
 
 
 /* ハンバーガー */
 
 .contentsArea{
-    display: flex;
+    /* display: flex; */
     min-height: 100vh;
     padding-left: 0;  
-    margin-left: 0;  /* sidebar幅に合わせる */
+    margin-left: 40px;  /* sidebar幅に合わせる */
+    margin-top:0px;
     padding-top: 0;
     padding-right: 0;
     padding-bottom: 0;
@@ -245,6 +310,36 @@ table th,td{
     top: 32px;
   }
 
+  /* ハンバーガー線の変化をなめらかに */
+.hamburger-menu__bar {
+    transition: all 0.3s ease;
+}
+
+/* サイドバーを閉じたとき：上と下の線を右向き矢印にする */
+.sidebar.shrunk .hamburger-menu__bar{
+    top: 24px;
+    left: 15px;
+    right: 15px;
+    transform-origin: right center;
+}
+
+/* 上の線 */
+.sidebar.shrunk .hamburger-menu__bar:first-child {
+     left: 18px;
+     transform: rotate(45deg);
+}
+
+/* 真ん中の線：矢印の横棒 */
+.sidebar.shrunk .hamburger-menu__bar:nth-child(2) {
+    transform: none;
+}
+
+/* 下の線 */
+.sidebar.shrunk .hamburger-menu__bar:last-child {
+     left: 18px;
+     transform: rotate(-45deg);
+}
+
   .sidebarHamburger{
       position: relative;
       height: 70px;   /* ここでメニューの開始位置を確保 */
@@ -281,6 +376,8 @@ table th,td{
 
 .title {
     font-size: 30px;
+    margin-left: 70px;
+    padding: 10px;
 }
 
 .side-button{
@@ -288,9 +385,24 @@ table th,td{
       display: inline-block;
 }
 
+.side-button a.active {
+    background: #9ea3a6;
+    color: #fff;
+}
+
+.inquiry-button {
+    width: 100%;
+    text-align: center;
+    color: #4CAF93;
+    background-color: #fff;
+    padding: 10px;
+    position: absolute;
+    bottom: 10px
+}
+
 /* 縮小状態（JSで body に付くクラス） */
 body.sidebar-shrunk .sidebar{ width: 70px; }
-body.sidebar-shrunk .main-part{ margin-left: 70px; }
+body.sidebar-shrunk .main-part .contentsArea{ margin-left: 70px; }
 
 /* 縮小時は「文字だけ」消す */
 body.sidebar-shrunk .sidebar_menu,
@@ -298,7 +410,11 @@ body.sidebar-shrunk .sidebar_menu_inquiry{
   display: none;
 }
 
-.accountInquiry{
+.sidebar.shrunk  .inquiry-button{
+     display: none;
+}
+
+.accountInquiry, .form-control{
     padding: 10px 10px;
     margin: 10px 10px;
     border: solid 1px #000000;
@@ -306,4 +422,48 @@ body.sidebar-shrunk .sidebar_menu_inquiry{
 
 .inquiryEdit{
     color: #4CAF93;
+}
+
+.adminTableArea {
+    width: 100%;
+}
+
+.adminTableArea table {
+    margin: 0 auto;
+}
+
+.adminTableArea th,
+.adminTableArea td {
+    text-align: center;
+}
+
+/* =========================
+   右と左のコンテンツ
+========================= */
+
+.rightContentsShrunk{
+    padding-left: 160px;
+}
+
+
+/* 通常時 */
+.sidebar {
+    width: 250px;
+    transition: width 0.3s ease;
+}
+
+.rightContents {
+    margin-left: 260px; /* サイドバーの横幅に合わせる */
+    width: calc(100% - 260px);
+    transition: all 0.3s ease;
+}
+
+/* ハンバーガーで閉じたとき */
+.sidebar.shrunk {
+    width: 80px;
+}
+
+.sidebar.shrunk ~ .rightContents {
+    margin-left: 80px; /* 閉じたサイドバーの横幅に合わせる */
+    width: calc(100% - 80px);
 }

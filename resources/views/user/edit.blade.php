@@ -1,4 +1,4 @@
-@extends('layouts.user_base')
+@extends('layouts.admin_base')
 
 @section('content')
     <div class="container">
@@ -106,7 +106,7 @@
 
 
 
-            <button type="submit" class="btn btn-primary">更新</button>
+            <button type="submit" class="updateButton">更新</button>
         </form>
     </div>
 @endsection

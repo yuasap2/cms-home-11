@@ -1,18 +1,16 @@
-@extends('layouts.user_base')
+@extends('layouts.admin_base')
 
 @section('content')
 
-<h1>
-    <div class="header">
+<div class="header">
+    <h1>
         <a href="{{ url('/home') }}" class="top">TOP</a> > アカウント一覧
-    </div>
-</h1>
+    </h1>
+    <div class="title">アカウント一覧</div>
+</div>
+<br>
 
-
-<div class="title">アカウント一覧</div>
-
-
-<div class="adminTableArea">
+<div class="accountTable">
     <table class="table">
         <thead class="tableThead">
             <tr>
@@ -25,7 +23,7 @@
                 <th scope="col">番地・アパート名</th>
             </tr>
         </thead>
-   
+
         <tbody class="tableTbody">
             @foreach ($users as $user)
                 <tr>
@@ -94,7 +92,7 @@
 
     <div>
         <div>番地・アパート名</div>
-        <div><input type="text" name="address" class="accountInquiry" placeholder="例）1号室"></div>
+        <div><input type="text" name="address" class="accountInquiry" placeholder="例）1-1 マンション1号室"></div>
     </div>
 
     <button type="submit" class="submitButton">登録する</button>
