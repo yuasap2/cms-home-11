@@ -176,27 +176,28 @@ table th,td{
     /* display: flex; */
     min-height: 100vh;
     padding-left: 0;  
-    margin-left: 40px;  /* sidebar幅に合わせる */
+    /* margin-left: 160px;*/
     margin-top:0px;
     padding-top: 0;
     padding-right: 0;
     padding-bottom: 0;
+    /* transition: margin-left 0.3s ease; */
 }
 
 .sidebar {
     flex-shrink: 0;
     min-height: 100vh;
     position: fixed;
-    width: 180px;
+    width: 250px;
     height: 100vh;
-    transition: width .2s ease;
-    color: #DDEDE6;
-    background-color: #88C8AC;
     position: fixed;
     top: 0;
     left: 0;
-    bottom: auto;          /* bottom指定があったら無効化 */
     z-index: 1000;
+    color: #DDEDE6;
+    background-color: #88C8AC;
+    overflow: hidden;
+    transition: width 0.3s ease;
 }
 
 .sidebarList{
@@ -316,7 +317,7 @@ table th,td{
 }
 
 /* サイドバーを閉じたとき：上と下の線を右向き矢印にする */
-.sidebar.shrunk .hamburger-menu__bar{
+body.sidebar-shrunk .hamburger-menu__bar {
     top: 24px;
     left: 15px;
     right: 15px;
@@ -324,18 +325,18 @@ table th,td{
 }
 
 /* 上の線 */
-.sidebar.shrunk .hamburger-menu__bar:first-child {
+body.sidebar-shrunk .hamburger-menu__bar:first-child {
      left: 18px;
      transform: rotate(45deg);
 }
 
 /* 真ん中の線：矢印の横棒 */
-.sidebar.shrunk .hamburger-menu__bar:nth-child(2) {
+body.sidebar-shrunk .hamburger-menu__bar:nth-child(2) {
     transform: none;
 }
 
 /* 下の線 */
-.sidebar.shrunk .hamburger-menu__bar:last-child {
+body.sidebar-shrunk .hamburger-menu__bar:last-child {
      left: 18px;
      transform: rotate(-45deg);
 }
@@ -401,12 +402,20 @@ table th,td{
 }
 
 /* 縮小状態（JSで body に付くクラス） */
-body.sidebar-shrunk .sidebar{ width: 70px; }
-body.sidebar-shrunk .main-part .contentsArea{ margin-left: 70px; }
+body.sidebar-shrunk .sidebar{ width: 80px; }
+/* body.sidebar-shrunk .inquiry-name{ margin-left: 70px; } */
+
+/* メニュー文字は折り返さない */
+.sidebar_menu,
+.sidebar_menu_inquiry,
+.inquiry-name {
+  white-space: nowrap;
+}
+      
+
 
 /* 縮小時は「文字だけ」消す */
-body.sidebar-shrunk .sidebar_menu,
-body.sidebar-shrunk .sidebar_menu_inquiry{
+body.sidebar-shrunk .menu-text {
   display: none;
 }
 
@@ -450,20 +459,73 @@ body.sidebar-shrunk .sidebar_menu_inquiry{
 .sidebar {
     width: 250px;
     transition: width 0.3s ease;
+    overflow: hidden;
 }
 
 .rightContents {
-    margin-left: 260px; /* サイドバーの横幅に合わせる */
-    width: calc(100% - 260px);
-    transition: all 0.3s ease;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    transition: margin-left 0.3s ease, width 0.3s ease;
 }
 
 /* ハンバーガーで閉じたとき */
-.sidebar.shrunk {
+body.sidebar-shrunk .sidebar {
     width: 80px;
 }
 
-.sidebar.shrunk ~ .rightContents {
-    margin-left: 80px; /* 閉じたサイドバーの横幅に合わせる */
+body.sidebar-shrunk .rightContents {
+    margin-left: 80px;
     width: calc(100% - 80px);
+}
+
+/* お問い合わせ編集ページ inquiry/~/edit */
+.remarks_form_control {
+    padding: 5px;
+    border: 1px #333 solid;
+}
+
+.inquiryInformation {
+    padding: 5px 0;
+}
+
+.form-control-plaintext {
+    padding: 5px;
+    border: 1px #333 solid;
+    max-width: 200px;
+    min-height: 20px;
+}
+
+.inquiryName, .inquiryDetails, .inquiryRemarks {
+    padding: 5px 0;
+}
+
+/* ハンバーガーで縮んだ時左右を合わせる */
+
+/* 右側コンテンツの中身を同じ幅で揃える */
+.rightContents > .contentsArea {
+    max-width: 880px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+/* TOP部分 */
+.header {
+    width: 100%;
+    margin: 0 0 10px 0;
+    box-sizing: border-box;
+}
+
+/* 表エリア */
+.adminTableArea {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 表 */
+.adminTableArea table {
+    width: 100%;
+    margin: 0;
 }

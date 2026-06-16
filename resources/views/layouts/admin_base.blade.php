@@ -51,10 +51,9 @@
         </div> --}}
             <script>
                 $(function () {
-                    $('#js-hamburger-menu').on('click', function () {
-                        $('.sidebar').toggleClass('shrunk')
-                        $('.main-part').toggleClass('main-part-shrunk')
-                        $('.side-button').toggle();                    });
+                      $('#js-hamburger-menu').on('click', function () {
+                          $('body').toggleClass('sidebar-shrunk');
+                      });
                 });
             </script> 
     </body>
