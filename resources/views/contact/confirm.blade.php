@@ -1,4 +1,4 @@
-@extends('layouts.user_base')
+@extends('layouts.admin_base')
 @section('title','内容確認')
 @section('content')
     <section class="confirm">

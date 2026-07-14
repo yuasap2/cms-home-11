@@ -1,4 +1,4 @@
-@extends('layouts.user_base')
+@extends('layouts.admin_base')
 @section('title','お問い合わせ')
 @section('content')
     <section class="contact">

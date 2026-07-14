@@ -11,7 +11,7 @@
 .contactMainBox {
     max-width: 800px;
     width: 100%;
-    margin-left: 180px;
+    margin-left: 250px;
 }
 
 .contactItem .required {
@@ -207,10 +207,13 @@ table th,td{
 }
 
 .main-part{
-    margin-left: 180px;
+    margin-left: 250px;
     padding: 80px 20px 50px;
-    transition: margin-left .2s ease;
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease;
 }
+
+
 
 .sidebar ul{
     margin: 0;
