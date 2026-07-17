@@ -10,7 +10,7 @@
         <div class="login">
             <div class="loginFormArea">
                 <h2 class="adminTitle">管理画面</h2>
-                <form action="#" method="POST">
+                <form action="{{ route('login.submit') }}" method="POST">
                     @csrf
                     <div class="loginItemBox">
                         <label for="email">Email</label>
